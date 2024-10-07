@@ -1633,7 +1633,7 @@ section,
 }
 
 /* Media query for mobile devices (576px - 767px) */
-@media (max-width: 767px) and (min-width: 576px) {
+@media (max-width: 767px) {
   .services .img {
     width: 100%; /* Force the width to 100% */
     height: auto; /* Force the height to adjust */
