@@ -1632,6 +1632,19 @@ section,
   object-fit: cover;
 }
 
+/* Media query for mobile devices (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .services .img {
+    width: 100%; /* Force the width to 100% */
+    height: auto; /* Force the height to adjust */
+  }
+
+  .services .img img {
+    width: 100%; /* Ensure the image fits its container */
+    height: 380px; /* Maintain aspect ratio */
+  }
+}
+
 .services .details {
 
   background: color-mix(in srgb, var(--surface-color), transparent 30%);
