@@ -106,6 +106,44 @@
     }
   };
 
+  /**
+   * Dynamically Change Service Content
+   */
+  const servicios = {
+    seca: {
+      image: '../assets/img/cargodite/CargoDryvan (1).jpg',
+      title: 'Carga en caja seca',
+      description: `
+        Nuestro servicio de carga en caja seca garantiza el transporte seguro y 
+        confiable de sus mercancías en todo el país. Priorizamos la seguridad y la eficiencia en cada entrega.
+      `
+    },
+    refrigerada: {
+      image: '../assets/img/cargodite/termo.jpg',
+      title: 'Caja refrigerada',
+      description: `
+        When it comes to temperature-sensitive goods, our refrigerated freightload service offers the precision 
+        and control that you need.
+      `
+    },
+    almacenamiento: {
+      image: '../assets/img/cargodite/warehouse.jpeg',
+      title: 'Bodega y Distribución',
+      description: `
+        Nuestros servicios de distribución y almacenamiento ofrecen una integración perfecta con su cadena de suministro, 
+        brindando soluciones eficientes.
+      `
+    },
+    cruce: {
+      image: '../assets/img/cargodite/importexport.jpg',
+      title: 'Cruce fronterizo entre México y Estados Unidos',
+      description: `
+        Nuestros servicios de transporte fronterizo facilitan el transporte fluido de mercancías a través de las fronteras, 
+        garantizando el cumplimiento de todas las normativas.
+      `
+    }
+  };
+
   // Handle click events on service links
 document.querySelectorAll('.service-link').forEach(link => {
   link.addEventListener('click', function(event) {
@@ -119,12 +157,14 @@ document.querySelectorAll('.service-link').forEach(link => {
 
     // Get the service key from the clicked link
     const serviceKey = this.getAttribute('data-service');
+    const lang=this.getAttribute('data-lang')
+
+    const service=lang==='en'?services[serviceKey] : servicios [serviceKey]
 
     // Update content based on the selected service
-    const service = services[serviceKey];
     document.getElementById('service-image').src = service.image;
     document.getElementById('service-title').textContent = service.title;
-    document.getElementById('service-description').innerHTML = service.description;
+    document.getElementById('service-description').innerHTML = service.description;      
   });
 });
 
